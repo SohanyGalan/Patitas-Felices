@@ -31,5 +31,16 @@ clinica-veterinaria-patitas-felices/
 Abre `index.html` en el navegador o usa la extensión **Live Server** de Visual Studio Code.
 
 ## 🔗 Enlaces
-- Repositorio: https://github.com/SohanyGalan/clinica-veterinaria-patitas-felices
-- GitHub Pages: https://sohanygalan.github.io/clinica-veterinaria-patitas-felices/
+- Repositorio: https://github.com/SohanyGalan/Patitas-Felices
+- GitHub Pages: https://sohanygalan.github.io/Patitas-Felices/
+
+## 📑 Documentación
+La carpeta [`documentacion/`](documentacion/) contiene:
+- `TUTORIAL-COMPLETO-PROYECTO-2.md` → tutorial paso a paso (desarrollo web, VS Code, GitHub Pages y Vercel)
+- `METRICAS-TIEMPO.tsv` → tabla de tiempos por perfil de desarrollador (lista para Excel)
+- `SOHANY_GALAN_24-SISN-8-004_DOCUMENTACIÓN_PROYECTO_2.docx` → documento de entrega
+
+## 👤 Autoría
+- **Estudiante:** Sohany Galan Garcia — Matrícula 24-SISN-8-004
+- **Profesor:** Juancito Peña
+- **Fecha de entrega:** 2 de noviembre de 2026

@@ -1,0 +1,9 @@
+Perfil	Modalidad	Requisitos y planificación (h)	Diseño UI/UX (h)	HTML semántico (h)	CSS personalizado y responsive (h)	JavaScript: validación, carrusel, modal (h)	SEO, A11y y rendimiento (h)	Pruebas multi-navegador y móvil (h)	Despliegue GitHub + Vercel (h)	Documentación y tutorial (h)	TOTAL sin IA (h)	Días laborales sin IA (8 h)	TOTAL con IA (h)	Ahorro con IA (%)	Tarifa ref. (USD/h)	Costo sin IA (USD)	Costo con IA (USD)
+Aprendiz	Empresa	3	5	6	10	12	5	4	3	6	54	6.8	14	74%	5	270	70
+Aprendiz	Freelancer	4	6	6	11	13	5	4	3	6	58	7.3	16	72%	8	464	128
+Junior	Empresa	2	3	3	6	6	3	2	1.5	3	29.5	3.7	9	69%	12	354	108
+Junior	Freelancer	2.5	3.5	3	6	6	3	2.5	1.5	3	31	3.9	10	68%	15	465	150
+Senior	Empresa	1	2	1.5	3	3	2	1.5	0.5	2	16.5	2.1	6	64%	30	495	180
+Senior	Freelancer	1.5	2	1.5	3	3	2	1.5	0.5	2	17	2.1	6.5	62%	40	680	260
+Experto Full Stack	Empresa	0.5	1.5	1	2	2	1.5	1	0.5	1.5	11.5	1.4	4.5	61%	50	575	225
+Experto Full Stack	Freelancer	1	1.5	1	2	2	1.5	1	0.5	1.5	12	1.5	5	58%	65	780	325
