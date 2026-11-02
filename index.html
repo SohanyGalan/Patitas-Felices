@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="es-DO" data-theme="light">
+<head>
+  <!-- ===================== METADATOS BÁSICOS ===================== -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Clínica Veterinaria Patitas Felices | Santo Domingo, RD</title>
+
+  <!-- ===================== SEO ===================== -->
+  <meta name="description" content="Clínica Veterinaria Patitas Felices en Santo Domingo: consultas generales, cirugías y peluquería para tu mascota. Agenda tu cita por teléfono o WhatsApp.">
+  <meta name="keywords" content="veterinaria, clínica veterinaria, Santo Domingo, República Dominicana, mascotas, cirugía veterinaria, peluquería canina, consulta veterinaria">
+  <meta name="author" content="Clínica Veterinaria Patitas Felices">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#2C3E50">
+
+  <!-- Open Graph (Facebook, WhatsApp) y Twitter Cards -->
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="es_DO">
+  <meta property="og:title" content="Clínica Veterinaria Patitas Felices 🐾">
+  <meta property="og:description" content="Cuidamos a tu mascota como parte de nuestra familia. Consultas, cirugías y peluquería en Santo Domingo.">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1583337130417-3346a1be7dee">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Clínica Veterinaria Patitas Felices 🐾">
+  <meta name="twitter:description" content="Consultas, cirugías y peluquería para tu mascota en Santo Domingo.">
+  <meta name="twitter:image" content="https://images.unsplash.com/photo-1583337130417-3346a1be7dee">
+
+  <!-- Aplica el tema guardado ANTES de pintar la página (evita el parpadeo claro/oscuro) -->
+  <script>
+    (function () {
+      try {
+        var guardado = JSON.parse(localStorage.getItem('pf-tema'));
+        var oscuro = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        document.documentElement.setAttribute('data-theme', guardado || (oscuro ? 'dark' : 'light'));
+      } catch (e) {
+        document.documentElement.setAttribute('data-theme', 'light');
+      }
+    })();
+  </script>
+
+  <!-- Favicon con emoji (no requiere archivo extra) -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🐾</text></svg>">
+
+  <!-- ===================== RENDIMIENTO: conexiones anticipadas a los CDN ===================== -->
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+  <link rel="preconnect" href="https://images.unsplash.com">
+  <link rel="preconnect" href="https://randomuser.me">
+  <link rel="preload" as="image" href="https://images.unsplash.com/photo-1583337130417-3346a1be7dee">
+
+  <!-- ===================== CDN OFICIALES ===================== -->
+  <!-- Bootstrap 5.3.0 -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+  <!-- Font Awesome 6.0 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
+
+  <!-- CSS personalizado (siempre después de Bootstrap para poder sobrescribirlo) -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- ===================== DATOS ESTRUCTURADOS (SEO local - Schema.org) ===================== -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "VeterinaryCare",
+    "name": "Clínica Veterinaria Patitas Felices",
+    "image": "https://images.unsplash.com/photo-1583337130417-3346a1be7dee",
+    "telephone": "+1-809-555-0123",
+    "email": "citas@patitasfelices.com.do",
+    "priceRange": "$$",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Av. Winston Churchill #125, Piantini",
+      "addressLocality": "Santo Domingo",
+      "addressRegion": "Distrito Nacional",
+      "addressCountry": "DO"
+    },
+    "openingHoursSpecification": [
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"], "opens": "08:00", "closes": "19:00" },
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": "Saturday", "opens": "09:00", "closes": "15:00" }
+    ],
+    "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "10" }
+  }
+  </script>
+</head>
+
+<body>
+
+  <!-- Enlace de accesibilidad: permite a usuarios de teclado saltar el menú -->
+  <a class="skip-link" href="#contenido">Saltar al contenido principal</a>
+
+  <!-- Barra de progreso de lectura -->
+  <div class="progreso-scroll" id="progresoScroll" aria-hidden="true"></div>
+
+  <!-- ============================================================
+       ENCABEZADO: MENÚ FIJO SUPERIOR RESPONSIVO
+       ============================================================ -->
+  <header>
+    <nav class="navbar navbar-expand-lg fixed-top navbar-vet" id="menuPrincipal" aria-label="Navegación principal">
+      <div class="container">
+        <a class="navbar-brand marca" href="#inicio" aria-label="Patitas Felices - Ir al inicio">
+          <span class="marca-icono"><i class="fa-solid fa-paw" aria-hidden="true"></i></span>
+          <span class="marca-texto">Patitas <strong>Felices</strong></span>
+        </a>
+
+        <button class="navbar-toggler menu-hamburguesa" type="button" data-bs-toggle="collapse" data-bs-target="#menuEnlaces"
+                aria-controls="menuEnlaces" aria-expanded="false" aria-label="Abrir menú">
+          <span></span><span></span><span></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="menuEnlaces">
+          <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-1">
+            <li class="nav-item"><a class="nav-link" href="#inicio"><i class="fa-solid fa-house" aria-hidden="true"></i> Inicio</a></li>
+            <li class="nav-item"><a class="nav-link" href="#servicios"><i class="fa-solid fa-kit-medical" aria-hidden="true"></i> Servicios</a></li>
+            <li class="nav-item"><a class="nav-link" href="#equipo"><i class="fa-solid fa-user-doctor" aria-hidden="true"></i> Equipo</a></li>
+            <li class="nav-item"><a class="nav-link" href="#contacto"><i class="fa-solid fa-envelope" aria-hidden="true"></i> Contacto</a></li>
+            <li class="nav-item ms-lg-2">
+              <button class="btn-tema" id="btnTema" type="button" aria-label="Cambiar a modo oscuro">
+                <i class="fa-solid fa-moon" aria-hidden="true"></i>
+              </button>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main id="contenido">
+
+    <!-- ============================================================
+         SECCIÓN INICIO (HERO) - banner al 100% del ancho
+         ============================================================ -->
+    <section id="inicio" class="hero" aria-labelledby="tituloInicio">
+      <img class="hero-imagen"
+           src="https://images.unsplash.com/photo-1583337130417-3346a1be7dee"
+           alt="Perro feliz siendo atendido en la clínica veterinaria"
+           fetchpriority="high" decoding="async" width="1920" height="1080">
+      <div class="hero-capa" aria-hidden="true"></div>
+
+      <!-- Huellitas decorativas flotantes -->
+      <div class="huellas" aria-hidden="true">
+        <i class="fa-solid fa-paw"></i><i class="fa-solid fa-paw"></i><i class="fa-solid fa-paw"></i><i class="fa-solid fa-bone"></i>
+      </div>
+
+      <div class="container hero-contenido">
+        <div class="row">
+          <div class="col-lg-8 col-xl-7">
+            <span class="etiqueta-hero"><i class="fa-solid fa-heart-pulse" aria-hidden="true"></i> Atención veterinaria 24/7 para emergencias</span>
+            <h1 id="tituloInicio" class="hero-titulo">
+              🐶 Cuidamos a tu mascota <span class="texto-degradado">como familia</span> 🐱❤️
+            </h1>
+            <p class="hero-texto">
+              En <strong>Patitas Felices</strong> combinamos medicina veterinaria moderna, equipos de última generación y
+              mucho cariño para que tu compañero viva una vida larga, sana y feliz. Más de 12 años cuidando
+              a las mascotas de Santo Domingo. 🏥✨
+            </p>
+            <div class="d-flex flex-wrap gap-3">
+              <a href="#contacto" class="btn btn-cta btn-lg">
+                <i class="fa-solid fa-calendar-check" aria-hidden="true"></i> Agenda tu cita ahora
+              </a>
+              <a href="#servicios" class="btn btn-contorno btn-lg">
+                <i class="fa-solid fa-stethoscope" aria-hidden="true"></i> Ver servicios
+              </a>
+            </div>
+
+            <!-- Cifras destacadas -->
+            <ul class="cifras" aria-label="Cifras de la clínica">
+              <li><strong class="contador" data-meta="12">0</strong><span>Años de experiencia</span></li>
+              <li><strong class="contador" data-meta="8500">0</strong><span>Mascotas atendidas</span></li>
+              <li><strong class="contador" data-meta="98">0</strong><span>% Clientes felices</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <a href="#servicios" class="indicador-scroll" aria-label="Desplazarse a Servicios"><span></span></a>
+    </section>
+
+    <!-- ============================================================
+         SECCIÓN SERVICIOS (3 cards)
+         ============================================================ -->
+    <section id="servicios" class="seccion" aria-labelledby="tituloServicios">
+      <div class="container">
+        <header class="encabezado-seccion revelar">
+          <span class="subtitulo"><i class="fa-solid fa-paw" aria-hidden="true"></i> Lo que hacemos</span>
+          <h2 id="tituloServicios">Nuestros Servicios 🩺</h2>
+          <p>Todo lo que tu mascota necesita, en un solo lugar y con profesionales certificados.</p>
+        </header>
+
+        <div class="row g-4">
+          <!-- Card 1: Consulta General -->
+          <div class="col-md-6 col-lg-4 revelar">
+            <article class="card card-servicio h-100">
+              <div class="card-servicio-img">
+                <img src="https://purina.com.do/sites/default/files/2022-10/purina-consulta-veterinaria-para-mascotas-lo-que-debes-saber.jpg"
+                     class="card-img-top" alt="Veterinario realizando una consulta general a una mascota" loading="lazy" decoding="async">
+                <span class="card-servicio-icono"><i class="fa-solid fa-stethoscope" aria-hidden="true"></i></span>
+              </div>
+              <div class="card-body">
+                <h3 class="card-title">Consulta General</h3>
+                <p class="card-text">Chequeos completos, vacunación, desparasitación y planes de prevención personalizados para cada etapa de vida.</p>
+                <ul class="lista-check">
+                  <li><i class="fa-solid fa-circle-check" aria-hidden="true"></i> Vacunas y certificados</li>
+                  <li><i class="fa-solid fa-circle-check" aria-hidden="true"></i> Análisis de laboratorio</li>
+                </ul>
+              </div>
+              <div class="card-footer">
+                <a href="#contacto" class="enlace-servicio" data-servicio="Consulta General">Solicitar consulta <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+              </div>
+            </article>
+          </div>
+
+          <!-- Card 2: Cirugías -->
+          <div class="col-md-6 col-lg-4 revelar">
+            <article class="card card-servicio h-100">
+              <div class="card-servicio-img">
+                <img src="https://holavet.com.ar/wp-content/uploads/2022/04/close-up-on-veterinarian-taking-care-of-pet-1.webp"
+                     class="card-img-top" alt="Veterinaria atendiendo a una mascota antes de una cirugía" loading="lazy" decoding="async">
+                <span class="card-servicio-icono"><i class="fa-solid fa-syringe" aria-hidden="true"></i></span>
+              </div>
+              <div class="card-body">
+                <h3 class="card-title">Cirugías</h3>
+                <p class="card-text">Quirófano equipado, anestesia monitorizada y cuidados post-operatorios para esterilizaciones y cirugías de tejidos blandos.</p>
+                <ul class="lista-check">
+                  <li><i class="fa-solid fa-circle-check" aria-hidden="true"></i> Anestesia inhalatoria segura</li>
+                  <li><i class="fa-solid fa-circle-check" aria-hidden="true"></i> Hospitalización 24 h</li>
+                </ul>
+              </div>
+              <div class="card-footer">
+                <a href="#contacto" class="enlace-servicio" data-servicio="Cirugías">Consultar cirugía <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+              </div>
+            </article>
+          </div>
+
+          <!-- Card 3: Peluquería -->
+          <div class="col-md-6 col-lg-4 mx-md-auto revelar">
+            <article class="card card-servicio h-100">
+              <div class="card-servicio-img">
+                <img src="https://neozoo.com.ar/wp-content/uploads/2023/06/Iconos-e-imagenes-09.png"
+                     class="card-img-top" alt="Mascota recibiendo servicio de peluquería y baño" loading="lazy" decoding="async">
+                <span class="card-servicio-icono"><i class="fa-solid fa-scissors" aria-hidden="true"></i></span>
+              </div>
+              <div class="card-body">
+                <h3 class="card-title">Peluquería</h3>
+                <p class="card-text">Baños medicados, cortes de raza, limpieza de oídos y corte de uñas con productos hipoalergénicos.</p>
+                <ul class="lista-check">
+                  <li><i class="fa-solid fa-circle-check" aria-hidden="true"></i> Spa y aromaterapia</li>
+                  <li><i class="fa-solid fa-circle-check" aria-hidden="true"></i> Servicio a domicilio</li>
+                </ul>
+              </div>
+              <div class="card-footer">
+                <a href="#contacto" class="enlace-servicio" data-servicio="Peluquería">Reservar turno <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         SECCIÓN EQUIPO (3 veterinarios)
+         ============================================================ -->
+    <section id="equipo" class="seccion seccion-alterna" aria-labelledby="tituloEquipo">
+      <div class="container">
+        <header class="encabezado-seccion revelar">
+          <span class="subtitulo"><i class="fa-solid fa-user-doctor" aria-hidden="true"></i> Profesionales</span>
+          <h2 id="tituloEquipo">Nuestro Equipo 👩‍⚕️👨‍⚕️</h2>
+          <p>Médicos veterinarios apasionados por el bienestar animal y en formación continua.</p>
+        </header>
+
+        <div class="row g-4 justify-content-center">
+          <!-- Perfil 1 -->
+          <div class="col-sm-10 col-md-6 col-lg-4 revelar">
+            <article class="perfil h-100">
+              <div class="perfil-foto">
+                <img src="https://randomuser.me/api/portraits/women/45.jpg" alt="Foto de la Dra. Ana López" loading="lazy" width="150" height="150">
+              </div>
+              <h3>Dra. Ana López</h3>
+              <p class="perfil-especialidad"><i class="fa-solid fa-stethoscope" aria-hidden="true"></i> Medicina Interna</p>
+              <p class="perfil-descripcion">Directora médica con 15 años de experiencia. Especialista en diagnóstico de enfermedades crónicas y medicina preventiva felina.</p>
+              <div class="perfil-redes">
+                <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn de la Dra. Ana López"><i class="fa-brands fa-linkedin-in" aria-hidden="true"></i></a>
+                <a href="mailto:ana.lopez@patitasfelices.com.do" aria-label="Correo de la Dra. Ana López"><i class="fa-solid fa-envelope" aria-hidden="true"></i></a>
+              </div>
+            </article>
+          </div>
+
+          <!-- Perfil 2 -->
+          <div class="col-sm-10 col-md-6 col-lg-4 revelar">
+            <article class="perfil h-100">
+              <div class="perfil-foto">
+                <img src="https://randomuser.me/api/portraits/men/75.jpg" alt="Foto del Dr. Carlos Méndez" loading="lazy" width="150" height="150">
+              </div>
+              <h3>Dr. Carlos Méndez</h3>
+              <p class="perfil-especialidad"><i class="fa-solid fa-syringe" aria-hidden="true"></i> Cirugía y Traumatología</p>
+              <p class="perfil-descripcion">Cirujano certificado con más de 2,000 intervenciones exitosas. Experto en ortopedia y cirugía de mínima invasión.</p>
+              <div class="perfil-redes">
+                <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn del Dr. Carlos Méndez"><i class="fa-brands fa-linkedin-in" aria-hidden="true"></i></a>
+                <a href="mailto:carlos.mendez@patitasfelices.com.do" aria-label="Correo del Dr. Carlos Méndez"><i class="fa-solid fa-envelope" aria-hidden="true"></i></a>
+              </div>
+            </article>
+          </div>
+
+          <!-- Perfil 3 -->
+          <div class="col-sm-10 col-md-6 col-lg-4 revelar">
+            <article class="perfil h-100">
+              <div class="perfil-foto">
+                <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Foto de la Dra. Laura Gómez" loading="lazy" width="150" height="150">
+              </div>
+              <h3>Dra. Laura Gómez</h3>
+              <p class="perfil-especialidad"><i class="fa-solid fa-scissors" aria-hidden="true"></i> Dermatología y Estética</p>
+              <p class="perfil-descripcion">Especialista en piel y pelaje. Dirige nuestro spa y diseña tratamientos para alergias y problemas dermatológicos.</p>
+              <div class="perfil-redes">
+                <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn de la Dra. Laura Gómez"><i class="fa-brands fa-linkedin-in" aria-hidden="true"></i></a>
+                <a href="mailto:laura.gomez@patitasfelices.com.do" aria-label="Correo de la Dra. Laura Gómez"><i class="fa-solid fa-envelope" aria-hidden="true"></i></a>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         SECCIÓN TESTIMONIOS: carrusel de 10 clientes, 4 por vista
+         ============================================================ -->
+    <section id="testimonios" class="seccion" aria-labelledby="tituloTestimonios">
+      <div class="container-fluid container-xxl">
+        <header class="encabezado-seccion revelar">
+          <span class="subtitulo"><i class="fa-solid fa-comments" aria-hidden="true"></i> Testimonios</span>
+          <h2 id="tituloTestimonios">Lo que dicen nuestros clientes 💬⭐</h2>
+          <p>Más de 8,500 familias confían en nosotros. Estas son algunas de sus historias.</p>
+        </header>
+
+        <!-- Estructura: [botón izq] [ventana del carrusel] [botón der] -> los botones quedan FUERA del grupo de cards -->
+        <div class="carrusel" id="carruselTestimonios" role="region" aria-roledescription="carrusel" aria-label="Opiniones de clientes">
+          <button class="carrusel-btn carrusel-btn-prev" type="button" id="btnPrev" aria-label="Testimonios anteriores">
+            <i class="fa-solid fa-chevron-left" aria-hidden="true"></i>
+          </button>
+
+          <div class="carrusel-ventana">
+            <div class="carrusel-pista" id="pistaTestimonios">
+
+              <!-- Cliente 1 -->
+              <div class="carrusel-item">
+                <article class="testimonio">
+                  <img class="testimonio-foto" src="https://randomuser.me/api/portraits/women/12.jpg" alt="María Fernández" loading="lazy" width="90" height="90">
+                  <i class="fa-solid fa-quote-left testimonio-comillas" aria-hidden="true"></i>
+                  <p class="testimonio-texto">"Mi gatita Luna llegó muy enferma y hoy está saltando por toda la casa. ¡Gracias infinitas! 😻💕"</p>
+                  <div class="estrellas" aria-label="5 de 5 estrellas"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                  <h3 class="testimonio-nombre">María Fernández</h3>
+                  <span class="testimonio-mascota"><i class="fa-solid fa-cat" aria-hidden="true"></i> Dueña de Luna</span>
+                </article>
+              </div>
+
+              <!-- Cliente 2 -->
+              <div class="carrusel-item">
+                <article class="testimonio">
+                  <img class="testimonio-foto" src="https://randomuser.me/api/portraits/men/32.jpg" alt="José Ramírez" loading="lazy" width="90" height="90">
+                  <i class="fa-solid fa-quote-left testimonio-comillas" aria-hidden="true"></i>
+                  <p class="testimonio-texto">"El Dr. Méndez operó la pata de Rocky y en 3 semanas ya corría en el parque. ¡Excelentes! 🐕🦴"</p>
+                  <div class="estrellas" aria-label="5 de 5 estrellas"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                  <h3 class="testimonio-nombre">José Ramírez</h3>
+                  <span class="testimonio-mascota"><i class="fa-solid fa-dog" aria-hidden="true"></i> Dueño de Rocky</span>
+                </article>
+              </div>
+
+              <!-- Cliente 3 -->
+              <div class="carrusel-item">
+                <article class="testimonio">
+                  <img class="testimonio-foto" src="https://randomuser.me/api/portraits/women/26.jpg" alt="Carolina Peña" loading="lazy" width="90" height="90">
+                  <i class="fa-solid fa-quote-left testimonio-comillas" aria-hidden="true"></i>
+                  <p class="testimonio-texto">"La peluquería es espectacular. Coco salió oliendo delicioso y con un lacito precioso. 🛁🎀"</p>
+                  <div class="estrellas" aria-label="5 de 5 estrellas"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                  <h3 class="testimonio-nombre">Carolina Peña</h3>
+                  <span class="testimonio-mascota"><i class="fa-solid fa-dog" aria-hidden="true"></i> Dueña de Coco</span>
+                </article>
+              </div>
+
+              <!-- Cliente 4 -->
+              <div class="carrusel-item">
+                <article class="testimonio">
+                  <img class="testimonio-foto" src="https://randomuser.me/api/portraits/men/41.jpg" alt="Luis Batista" loading="lazy" width="90" height="90">
+                  <i class="fa-solid fa-quote-left testimonio-comillas" aria-hidden="true"></i>
+                  <p class="testimonio-texto">"Atendieron una emergencia a las 2 a.m. con una paciencia increíble. ¡Son unos ángeles! 🚑🙏"</p>
+                  <div class="estrellas" aria-label="5 de 5 estrellas"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                  <h3 class="testimonio-nombre">Luis Batista</h3>
+                  <span class="testimonio-mascota"><i class="fa-solid fa-dog" aria-hidden="true"></i> Dueño de Max</span>
+                </article>
+              </div>
+
+              <!-- Cliente 5 -->
+              <div class="carrusel-item">
+                <article class="testimonio">
+                  <img class="testimonio-foto" src="https://randomuser.me/api/portraits/women/33.jpg" alt="Patricia Almonte" loading="lazy" width="90" height="90">
+                  <i class="fa-solid fa-quote-left testimonio-comillas" aria-hidden="true"></i>
+                  <p class="testimonio-texto">"La Dra. Gómez curó la alergia de Kira cuando nadie más pudo. ¡Su pelaje brilla otra vez! ✨🐾"</p>
+                  <div class="estrellas" aria-label="5 de 5 estrellas"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                  <h3 class="testimonio-nombre">Patricia Almonte</h3>
+                  <span class="testimonio-mascota"><i class="fa-solid fa-dog" aria-hidden="true"></i> Dueña de Kira</span>
+                </article>
+              </div>
+
+              <!-- Cliente 6 -->
+              <div class="carrusel-item">
+                <article class="testimonio">
+                  <img class="testimonio-foto" src="https://randomuser.me/api/portraits/men/52.jpg" alt="Ramón Taveras" loading="lazy" width="90" height="90">
+                  <i class="fa-solid fa-quote-left testimonio-comillas" aria-hidden="true"></i>
+                  <p class="testimonio-texto">"Precios justos, instalaciones limpias y un trato muy humano. Mi loro Paco los adora. 🦜💚"</p>
+                  <div class="estrellas" aria-label="4 de 5 estrellas"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i></div>
+                  <h3 class="testimonio-nombre">Ramón Taveras</h3>
+                  <span class="testimonio-mascota"><i class="fa-solid fa-dove" aria-hidden="true"></i> Dueño de Paco</span>
+                </article>
+              </div>
+
+              <!-- Cliente 7 -->
+              <div class="carrusel-item">
+                <article class="testimonio">
+                  <img class="testimonio-foto" src="https://randomuser.me/api/portraits/women/57.jpg" alt="Gabriela Santos" loading="lazy" width="90" height="90">
+                  <i class="fa-solid fa-quote-left testimonio-comillas" aria-hidden="true"></i>
+                  <p class="testimonio-texto">"Me enviaron recordatorios de las vacunas por WhatsApp. ¡Nunca más se me olvida una! 📱💉"</p>
+                  <div class="estrellas" aria-label="5 de 5 estrellas"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                  <h3 class="testimonio-nombre">Gabriela Santos</h3>
+                  <span class="testimonio-mascota"><i class="fa-solid fa-cat" aria-hidden="true"></i> Dueña de Michi</span>
+                </article>
+              </div>
+
+              <!-- Cliente 8 -->
+              <div class="carrusel-item">
+                <article class="testimonio">
+                  <img class="testimonio-foto" src="https://randomuser.me/api/portraits/men/67.jpg" alt="Andrés Castillo" loading="lazy" width="90" height="90">
+                  <i class="fa-solid fa-quote-left testimonio-comillas" aria-hidden="true"></i>
+                  <p class="testimonio-texto">"Explicaron cada paso del tratamiento de Toby con claridad. Me sentí acompañado siempre. 🤝🐶"</p>
+                  <div class="estrellas" aria-label="5 de 5 estrellas"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                  <h3 class="testimonio-nombre">Andrés Castillo</h3>
+                  <span class="testimonio-mascota"><i class="fa-solid fa-dog" aria-hidden="true"></i> Dueño de Toby</span>
+                </article>
+              </div>
+
+              <!-- Cliente 9 -->
+              <div class="carrusel-item">
+                <article class="testimonio">
+                  <img class="testimonio-foto" src="https://randomuser.me/api/portraits/women/79.jpg" alt="Isabel Rosario" loading="lazy" width="90" height="90">
+                  <i class="fa-solid fa-quote-left testimonio-comillas" aria-hidden="true"></i>
+                  <p class="testimonio-texto">"Mi conejita Nieve recibió atención de exóticos que no encontraba en otro lugar. 🐰🌸"</p>
+                  <div class="estrellas" aria-label="4 de 5 estrellas"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i></div>
+                  <h3 class="testimonio-nombre">Isabel Rosario</h3>
+                  <span class="testimonio-mascota"><i class="fa-solid fa-carrot" aria-hidden="true"></i> Dueña de Nieve</span>
+                </article>
+              </div>
+
+              <!-- Cliente 10 -->
+              <div class="carrusel-item">
+                <article class="testimonio">
+                  <img class="testimonio-foto" src="https://randomuser.me/api/portraits/men/85.jpg" alt="Miguel Ángel Reyes" loading="lazy" width="90" height="90">
+                  <i class="fa-solid fa-quote-left testimonio-comillas" aria-hidden="true"></i>
+                  <p class="testimonio-texto">"Llevo a mis 3 perros desde hace 8 años. Calidad, cariño y confianza total. 🏆🐕🐕🐕"</p>
+                  <div class="estrellas" aria-label="5 de 5 estrellas"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                  <h3 class="testimonio-nombre">Miguel Ángel Reyes</h3>
+                  <span class="testimonio-mascota"><i class="fa-solid fa-dog" aria-hidden="true"></i> Dueño de Thor, Zeus y Bella</span>
+                </article>
+              </div>
+
+            </div>
+          </div>
+
+          <button class="carrusel-btn carrusel-btn-next" type="button" id="btnNext" aria-label="Testimonios siguientes">
+            <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
+          </button>
+        </div>
+
+        <!-- Indicadores (puntos) generados con JavaScript -->
+        <div class="carrusel-puntos" id="puntosTestimonios" role="tablist" aria-label="Seleccionar grupo de testimonios"></div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         SECCIÓN CONTACTO
+         ============================================================ -->
+    <section id="contacto" class="seccion seccion-alterna" aria-labelledby="tituloContacto">
+      <div class="container">
+        <header class="encabezado-seccion revelar">
+          <span class="subtitulo"><i class="fa-solid fa-envelope" aria-hidden="true"></i> Hablemos</span>
+          <h2 id="tituloContacto">Contáctanos 📞💌</h2>
+          <p>Llámanos, escríbenos por WhatsApp o déjanos un mensaje. Respondemos en menos de 1 hora.</p>
+        </header>
+
+        <div class="row g-4 align-items-stretch">
+          <!-- Tarjeta de teléfono -->
+          <div class="col-lg-5 revelar">
+            <div class="tarjeta-contacto h-100">
+              <div class="tarjeta-contacto-icono"><i class="fa-solid fa-phone-volume" aria-hidden="true"></i></div>
+              <p class="tarjeta-contacto-label">Llámanos directamente</p>
+              <a href="tel:+18095550123" class="telefono-grande" aria-label="Llamar al 809 555 0123">(809) 555-0123</a>
+              <p class="tarjeta-contacto-sub">🇩🇴 Santo Domingo, República Dominicana</p>
+
+              <a href="https://wa.me/18095550123?text=Hola%20Patitas%20Felices%20%F0%9F%90%BE%2C%20quiero%20agendar%20una%20cita."
+                 class="btn btn-whatsapp btn-lg w-100" target="_blank" rel="noopener noreferrer" id="btnWhatsApp">
+                <i class="fa-brands fa-whatsapp" aria-hidden="true"></i> Escríbenos por WhatsApp
+              </a>
+
+              <ul class="datos-contacto">
+                <li><i class="fa-solid fa-envelope" aria-hidden="true"></i> <a href="mailto:citas@patitasfelices.com.do">citas@patitasfelices.com.do</a></li>
+                <li><i class="fa-solid fa-truck-medical" aria-hidden="true"></i> Emergencias 24/7: <a href="tel:+18295550199">(829) 555-0199</a></li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Formulario -->
+          <div class="col-lg-7 revelar">
+            <form class="formulario h-100" id="formContacto" novalidate aria-describedby="formAyuda">
+              <h3 class="formulario-titulo"><i class="fa-solid fa-paper-plane" aria-hidden="true"></i> Envíanos un mensaje</h3>
+              <p id="formAyuda" class="formulario-ayuda">Los campos con <span aria-hidden="true">*</span> son obligatorios. Tu borrador se guarda automáticamente. 💾</p>
+
+              <div class="mb-3">
+                <label for="nombre" class="form-label">Nombre completo *</label>
+                <div class="campo-icono">
+                  <i class="fa-solid fa-user" aria-hidden="true"></i>
+                  <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Ej: Juan Pérez" autocomplete="name" required minlength="3" maxlength="60">
+                </div>
+                <div class="invalid-feedback" id="errorNombre">Escribe tu nombre (mínimo 3 letras).</div>
+              </div>
+
+              <div class="mb-3">
+                <label for="email" class="form-label">Correo electrónico *</label>
+                <div class="campo-icono">
+                  <i class="fa-solid fa-at" aria-hidden="true"></i>
+                  <input type="email" class="form-control" id="email" name="email" placeholder="Ej: juan@correo.com" autocomplete="email" required maxlength="80">
+                </div>
+                <div class="invalid-feedback" id="errorEmail">Introduce un correo válido (ej: nombre@dominio.com).</div>
+              </div>
+
+              <div class="mb-3">
+                <label for="mensaje" class="form-label">Mensaje *</label>
+                <div class="campo-icono campo-textarea">
+                  <i class="fa-solid fa-comment-dots" aria-hidden="true"></i>
+                  <textarea class="form-control" id="mensaje" name="mensaje" rows="5" placeholder="Cuéntanos sobre tu mascota y en qué podemos ayudarte..." required minlength="10" maxlength="500"></textarea>
+                </div>
+                <div class="d-flex justify-content-between">
+                  <div class="invalid-feedback" id="errorMensaje">El mensaje debe tener al menos 10 caracteres.</div>
+                  <small class="contador-caracteres ms-auto" id="contadorMensaje" aria-live="polite">0/500</small>
+                </div>
+              </div>
+
+              <button type="submit" class="btn btn-enviar btn-lg w-100">
+                <i class="fa-solid fa-paper-plane" aria-hidden="true"></i> Enviar mensaje
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============================================================
+       FOOTER
+       ============================================================ -->
+  <footer class="footer" aria-labelledby="tituloFooter">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-md-6 col-lg-4">
+          <h2 id="tituloFooter" class="footer-marca"><i class="fa-solid fa-paw" aria-hidden="true"></i> Patitas Felices</h2>
+          <p>Medicina veterinaria con corazón. Cuidamos a tu mascota como parte de nuestra familia desde 2014. 🐾</p>
+          <nav class="redes" aria-label="Redes sociales">
+            <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook" class="red-facebook"><i class="fa-brands fa-facebook-f" aria-hidden="true"></i></a>
+            <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram" class="red-instagram"><i class="fa-brands fa-instagram" aria-hidden="true"></i></a>
+            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" aria-label="Twitter" class="red-twitter"><i class="fa-brands fa-twitter" aria-hidden="true"></i></a>
+            <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" class="red-linkedin"><i class="fa-brands fa-linkedin-in" aria-hidden="true"></i></a>
+            <a href="https://www.youtube.com" target="_blank" rel="noopener noreferrer" aria-label="YouTube" class="red-youtube"><i class="fa-brands fa-youtube" aria-hidden="true"></i></a>
+          </nav>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+          <h3 class="footer-titulo">📍 Dirección</h3>
+          <address class="mb-0">
+            <p><i class="fa-solid fa-location-dot" aria-hidden="true"></i> Av. Winston Churchill #125, Piantini<br>Santo Domingo, República Dominicana</p>
+            <p><i class="fa-solid fa-phone" aria-hidden="true"></i> <a href="tel:+18095550123">(809) 555-0123</a></p>
+            <p><i class="fa-solid fa-envelope" aria-hidden="true"></i> <a href="mailto:citas@patitasfelices.com.do">citas@patitasfelices.com.do</a></p>
+          </address>
+        </div>
+
+        <div class="col-lg-4">
+          <h3 class="footer-titulo">🕒 Horarios</h3>
+          <ul class="horarios">
+            <li><span>Lunes a Viernes</span><span>8:00 a.m. – 7:00 p.m.</span></li>
+            <li><span>Sábados</span><span>9:00 a.m. – 3:00 p.m.</span></li>
+            <li><span>Domingos</span><span>Solo emergencias</span></li>
+            <li class="horario-emergencia"><span><i class="fa-solid fa-truck-medical" aria-hidden="true"></i> Emergencias</span><span>24/7</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-inferior">
+        <p class="mb-0">© <span id="anioActual">2026</span> Clínica Veterinaria Patitas Felices. Todos los derechos reservados.</p>
+        <p class="mb-0">Hecho con <i class="fa-solid fa-heart latido-mini" aria-hidden="true"></i><span class="visually-hidden">amor</span> en República Dominicana 🇩🇴</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Botón flotante de WhatsApp -->
+  <a href="https://wa.me/18095550123" class="whatsapp-flotante" target="_blank" rel="noopener noreferrer" aria-label="Chatear por WhatsApp">
+    <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
+  </a>
+
+  <!-- Botón volver arriba -->
+  <button class="volver-arriba" id="volverArriba" type="button" aria-label="Volver arriba">
+    <i class="fa-solid fa-arrow-up" aria-hidden="true"></i>
+  </button>
+
+  <!-- ============================================================
+       MODAL DE CONFIRMACIÓN (simulacro de envío de correo)
+       ============================================================ -->
+  <div class="modal fade" id="modalConfirmacion" tabindex="-1" aria-labelledby="tituloModal" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content modal-vet">
+        <div class="modal-body text-center">
+          <div class="modal-icono" id="modalIcono"><i class="fa-solid fa-circle-check" aria-hidden="true"></i></div>
+          <h2 class="modal-title" id="tituloModal">¡Mensaje listo para enviar! 🎉</h2>
+          <p id="modalMensaje">Abrimos tu aplicación de correo. 📧</p>
+          <div class="modal-resumen" id="modalResumen"></div>
+          <button type="button" class="btn btn-cta mt-3" data-bs-dismiss="modal">¡Entendido! 🐾</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Notificación tipo "toast" para avisos rápidos -->
+  <div class="toast-container position-fixed bottom-0 start-50 translate-middle-x p-3">
+    <div id="toastAviso" class="toast toast-vet" role="status" aria-live="polite" aria-atomic="true">
+      <div class="toast-body" id="toastTexto">Aviso</div>
+    </div>
+  </div>
+
+  <!-- ===================== SCRIPTS ===================== -->
+  <!-- Bootstrap 5.3.0 (incluye Popper) -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+          integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous" defer></script>
+  <!-- JavaScript personalizado -->
+  <script src="script.js" defer></script>
+</body>
+</html>
